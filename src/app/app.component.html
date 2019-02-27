@@ -5,36 +5,22 @@
 </nav>
 <div class="container">
   <div class="row">
-    
-    <div class="col-md-8 mt-5">
-      <ul class="list-group">
-        <li *ngFor="let tasks of taskArray" class="list-group-item list-group-item-action">
-        {{tasks.id}}- {{tasks.title}} 
-        <button type="button" class="btn btn-outline-primary" (click)="openEdit(tasks)
-      "
-    (class.active)="tasks === selectedTask">edit</button>
-      </li>
-      </ul>
-      
-    </div>
-    <div class="col-md-4">
-      <div class="card mt-5">
+    <div class="col-md-6 text-center">
+      <div class="card mt-4">
         <div class="card-body">
-          <div class="card-title">
-            Insert a new task
-          </div>
-          <div class="form-group">
-          <input type="text" [(ngModel)]="selectedTask.title" placeholder="Please insert a new task here" class="form-control">
+          <h3 class="card-title">Add a new task</h3>
         </div>
-        <button (click)="addOrEdit()"class="btn-primary ml-3">Submit</button>
-        <button *ngIf= 'selectedTask.id !== 0' 
-        class="btn-danger"
-        (click)="delete()">Delete</button>
-        
+      </div>
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="card mt-4">
+        <div class="card-body">
+          <app-todo></app-todo>
         </div>
+      </div>
     </div>
   </div>
-
+   
 </div>
 
 <router-outlet></router-outlet>
