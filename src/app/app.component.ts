@@ -7,15 +7,24 @@ import {Tasks} from './models/tasks'
 })
 export class AppComponent {
   taskArray: Tasks[] = [
-    {id:232, title:"First task"},
-    {id:233, title:"Second task"},
-    {id:234, title:"Third task"}
+    
   ];
   selectedTask: Tasks = new Tasks();
-  add(){
-    this.selectedTask.title = this.selectedTask.title;
+  addOrEdit(){
+    if(this.selectedTask.id === 0){
     this.selectedTask.id = this.taskArray.length + 1;
     this.taskArray.push(this.selectedTask);
+    
+    }
     this.selectedTask = new Tasks;
   };
+  openEdit(tasks: Tasks){
+    this.selectedTask = tasks;
+  }
+  delete(){
+    if(confirm("Are you sure?")){
+    this.taskArray = this.taskArray.filter(x => x != this.selectedTask );
+    this.selectedTask = new Tasks;
+    }
+  }
 }
