@@ -4,12 +4,16 @@ import {FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+//Components
+import { TodoComponent } from './components/todo/todo.component';
+//Services
+import {TodoService} from './services/todo.service'
 //Firebase
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
-//Firebase config
+//Enviroment config
 import {environment} from '../environments/environment';
-import { TodoComponent } from './components/todo/todo.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,7 @@ import { TodoComponent } from './components/todo/todo.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
