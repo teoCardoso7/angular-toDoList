@@ -11,6 +11,11 @@ export class AppComponent {
     {id:233, title:"Second task"},
     {id:234, title:"Third task"}
   ];
-
-  
+  selectedTask: Tasks = new Tasks();
+  add(){
+    this.selectedTask.title = this.selectedTask.title;
+    this.selectedTask.id = this.taskArray.length + 1;
+    this.taskArray.push(this.selectedTask);
+    this.selectedTask = new Tasks;
+  };
 }
