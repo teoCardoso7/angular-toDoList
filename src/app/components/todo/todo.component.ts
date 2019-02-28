@@ -36,7 +36,7 @@ export class TodoComponent implements OnInit {
     this.todoService.udpdateTodo($key, !isChecked)
   }
   removeTodo($key){
-    if(confirm("Are you sure?")){
+    if(confirm("Are you sure you want to delete this task?")){
     this.todoService.deleteTodo($key);
     }
     
