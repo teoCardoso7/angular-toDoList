@@ -1,5 +1,5 @@
 <div class="input-group">
-  <input type="text" class="form-control" placeholder="Create a new task" #itemTitle>
+  <input type="text" class="form-control" placeholder="Create a new task" #itemTitle (keyup.enter)="addToDo(itemTitle)">
   <div class="input-group-append">
     <button class="btn btn-info"
     (click)="addToDo(itemTitle)">
