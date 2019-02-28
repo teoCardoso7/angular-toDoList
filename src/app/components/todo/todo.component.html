@@ -1,7 +1,7 @@
 <div class="input-group">
-  <input type="text" class="form-control" placeholder="Insert Task" #itemTitle>
+  <input type="text" class="form-control" placeholder="Create a new task" #itemTitle>
   <div class="input-group-append">
-    <button class="btn-outline-secondary"
+    <button class="btn btn-info"
     (click)="addToDo(itemTitle)">
   <i class="fas fa-plus-circle"></i></button>
   </div>
@@ -12,7 +12,7 @@
 <span class="cursor-hover"
 [class.text-success]="todo.isChecked"
 (click)="updateTodo(todo.$key, todo.isChecked)">
-  <i [ngClass]="todo.isChecked ? 'fas fa-check-circle':'far fa-circle'"></i>
+  <i [ngClass]="todo.isChecked ? 'fas fa-check-square':'far fa-square'"></i>
 </span>
 {{todo.title}}
  <span class="cursor-hover text-danger"
